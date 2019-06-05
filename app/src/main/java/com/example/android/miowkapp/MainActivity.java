@@ -34,11 +34,11 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
 
-        // to add icons to the taps
-        tabLayout.getTabAt(0).setIcon(R.drawable.ic_colors);
-        tabLayout.getTabAt(1).setIcon(R.drawable.ic_people2);
-        tabLayout.getTabAt(2).setIcon(R.drawable.ic_numbers);
-        tabLayout.getTabAt(3).setIcon(R.drawable.ic_proverb);
+//        // to add icons to the taps
+//        tabLayout.getTabAt(0).setIcon(R.drawable.ic_colors);
+//        tabLayout.getTabAt(1).setIcon(R.drawable.ic_people2);
+//        tabLayout.getTabAt(2).setIcon(R.drawable.ic_numbers);
+//        tabLayout.getTabAt(3).setIcon(R.drawable.ic_proverb);
 
 
     } // end of onCreate method
