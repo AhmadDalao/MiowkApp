@@ -34,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setupWithViewPager(viewPager);
 
 
+        //this code will change the color of the text on the tab layout both code below will work  just fine ..
+
+        //      tabLayout.setTabTextColors(Color.parseColor("#D3D3D3"),Color.parseColor("#f32159"));
+
+        tabLayout.setTabTextColors(getResources().getColor(R.color.colorAccent), getResources().getColor(R.color.myBlack));
+
+        //  tabLayout.setTabIconTint(  );
+
+
 //        // to add icons to the taps
 //        tabLayout.getTabAt(0).setIcon(R.drawable.ic_colors);
 //        tabLayout.getTabAt(1).setIcon(R.drawable.ic_people2);
