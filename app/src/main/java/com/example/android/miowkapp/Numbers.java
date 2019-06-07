@@ -7,10 +7,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 
+import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Objects;
 
 
 /**
@@ -45,32 +50,10 @@ public class Numbers extends Fragment {
         words.size();
 
 
-        LinearLayout linearLayout = (LinearLayout)view.findViewById(R.id.myLinearLayoutNumber);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this.getContext(), android.R.layout.simple_list_item_1, words);
 
-        int counter = 0;
-        while (counter < words.size()){
-            TextView textView = new TextView(this.getContext());
-            textView.setTextSize(32);
-            textView.setTextColor(getResources().getColor(R.color.myBlack));
-            textView.setText(words.get(counter));
-            linearLayout.addView(textView);
-            counter ++;
-        }
-
-
-
-
-        Log.v("Numbers", "word at index 0: " + words.get(0));
-        Log.v("Numbers", "word at index 1: " + words.get(1));
-        Log.v("Numbers", "word at index 2: " + words.get(2));
-        Log.v("Numbers", "word at index 3: " + words.get(3));
-        Log.v("Numbers", "word at index 4: " + words.get(4));
-        Log.v("Numbers", "word at index 5: " + words.get(5));
-        Log.v("Numbers", "word at index 6: " + words.get(6));
-        Log.v("Numbers", "word at index 7: " + words.get(7));
-        Log.v("Numbers", "word at index 8: " + words.get(8));
-        Log.v("Numbers", "word at index 9: " + words.get(9));
-        Log.v("Numbers", "the size of the array is : " + words.size());
+        ListView listView = (ListView) view.findViewById(R.id.myList);
+        listView.setAdapter(adapter);
 
 
         return view;
