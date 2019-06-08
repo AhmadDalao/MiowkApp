@@ -7,4 +7,6 @@
     <string name="colors">Hello colors fragment</string>
     <string name="numbers">Hello numbers fragment</string>
     <string name="family">Hello family fragment</string>
+    <string name="am_the_translation_text">am the translation text</string>
+    <string name="am_the_english_text">am the english text</string>
 </resources>
