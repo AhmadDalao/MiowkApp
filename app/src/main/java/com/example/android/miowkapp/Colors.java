@@ -31,27 +31,12 @@ public class Colors extends Fragment {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.words_list, container, false);
 
-
-//        ArrayList<WordsModel> words = new ArrayList<WordsModel>();
-//        words.add(new WordsModel("colors fragment text", "اهلااااا"));
-//        words.add(new WordsModel("ghghght", "اهلااااا"));
-//        words.add(new WordsModel("colors ghghgh text", "اهلااااا"));
-//        words.add(new WordsModel("codfdfdfment text", "اهلااااا"));
-//        words.add(new WordsModel("colors 66565656t", "اهلااااا"));
-//        words.add(new WordsModel("cofgfgfgment text", "اهلااااا"));
-//        words.add(new WordsModel("colors fragment dfdfdfrs fragment text", "اهلااااا"));
-//        words.add(new WordsModel("colorsdfdfdfxt", "اهلااااا"));
-//        words.add(new WordsModel("colorsdsdsd text", "اهلااااا"));
-//        words.add(new WordsModel("colors fragment text", "اهلااااا"));
-//        words.add(new WordsModel("colors fragment text", "اهلااااا"));
-
-        populateDataList();
-
+        populateColorsList();
 
         return view;
     }
 
-    private void populateDataList() {
+    private void populateColorsList() {
         ArrayList<WordsModel> words = WordsModel.getMyArrayListColors();
         myWordAdapter adapterb = new myWordAdapter(this.getContext(), words);
         ListView listView = (ListView) view.findViewById(R.id.myList);

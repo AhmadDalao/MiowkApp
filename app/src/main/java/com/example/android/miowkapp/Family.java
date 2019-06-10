@@ -17,6 +17,8 @@ import java.util.ArrayList;
 public class Family extends Fragment {
 
 
+    private View view;
+
     public Family() {
         // Required empty public constructor
     }
@@ -26,22 +28,20 @@ public class Family extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.words_list, container, false);
+        view = inflater.inflate(R.layout.words_list, container, false);
 
-        ArrayList<WordsModel> words = new ArrayList<WordsModel>();
-        words.add(new WordsModel("hello this Family fragment ", ""));
-        words.add(new WordsModel("ghghghment ", ""));
-        words.add(new WordsModel("hefgdfdfamily fragment ", ""));
-        words.add(new WordsModel("heldfdfnt ", ""));
-        words.add(new WordsModel("hello this Family fragment ", ""));
-        words.add(new WordsModel("helldddfdfamily fragment ", ""));
-        words.add(new WordsModel("heldfdfragment ", ""));
-
-        myWordAdapter adapter = new myWordAdapter(this.getContext(), words);
-        ListView listView = (ListView) view.findViewById(R.id.myList);
-        listView.setAdapter(adapter);
+        populateFamilyList();
 
         return view;
     }
+
+
+    private void populateFamilyList() {
+        ArrayList<WordsModel> words = WordsModel.getArrayListFamily();
+        myWordAdapter adapter = new myWordAdapter(this.getContext(), words);
+        ListView listView = (ListView) view.findViewById(R.id.myList);
+        listView.setAdapter(adapter);
+    }
+
 
 }

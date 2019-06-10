@@ -3,11 +3,13 @@ package com.example.android.miowkapp;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -19,6 +21,8 @@ import java.util.Objects;
 public class Numbers extends Fragment {
 
 
+    private View view;
+
     public Numbers() {
         // Required empty public constructor
     }
@@ -28,36 +32,22 @@ public class Numbers extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.words_list, container, false);
+         view = inflater.inflate(R.layout.words_list, container, false);
 
-
-        // 1 create the list as array list
-
-
-        ArrayList<WordsModel> words = new ArrayList<WordsModel>();
-
-        words.add(new WordsModel("words", "اهلا"));
-        words.add(new WordsModel("hi", "اهلا"));
-        words.add(new WordsModel("yo", "اهلا"));
-        words.add(new WordsModel("qwqwqwqw", "اهلا"));
-        words.add(new WordsModel("wewew", "اهلا"));
-        words.add(new WordsModel("woerererrds", "اهلا"));
-        words.add(new WordsModel("rerer", "اهلا"));
-        words.add(new WordsModel("rttrt", "اهلا"));
-        words.add(new WordsModel("fgfgfgfg", "اهلا"));
-        words.add(new WordsModel("hhhhh", "اهلا"));
-        words.add(new WordsModel("ggggg", "اهلا"));
-
-        myWordAdapter adapter = new myWordAdapter(this.getContext(), words);
-
-
-        ListView listView = (ListView) view.findViewById(R.id.myList);
-        listView.setAdapter(adapter);
-
-
+         populateNumbersList();
         return view;
 
     }
+
+    private void populateNumbersList(){
+        ArrayList<WordsModel> words = WordsModel.getArrayListNumbers();
+        myWordAdapter adapter = new myWordAdapter(this.getContext() ,words);
+        ListView listView = (ListView) view.findViewById(R.id.myList);
+        listView.setAdapter(adapter);
+
+    }
+
+
 
 
 }

@@ -17,6 +17,7 @@ import java.util.List;
  */
 public class phrases extends Fragment {
 
+    private View view;
 
     public phrases() {
         // Required empty public constructor
@@ -27,24 +28,18 @@ public class phrases extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.words_list, container, false);
+         view = inflater.inflate(R.layout.words_list, container, false);
+
+        populatePhraseList();
+        return view;
+    }
 
 
-        ArrayList<WordsModel> words = new ArrayList<WordsModel>();
-        words.add(new WordsModel("phrases text", "ةيةيةية"));
-        words.add(new WordsModel("fgfgfgfg text", "ةيةيةية"));
-        words.add(new WordsModel("dfdfdfdf text", "ةيةيةية"));
-        words.add(new WordsModel("phrases ssdsdsd", "ةيةيةية"));
-        words.add(new WordsModel("phrases text", "ةيةيةية"));
-        words.add(new WordsModel("45454545 text", "ةيةيةية"));
-        words.add(new WordsModel("454545 text", "ةيةيةية"));
-
-
+    private void populatePhraseList() {
+        ArrayList<WordsModel> words = WordsModel.getArrayListPhrases();
         myWordAdapter adapter = new myWordAdapter(this.getContext(), words);
         ListView listView = (ListView) view.findViewById(R.id.myList);
         listView.setAdapter(adapter);
-
-        return view;
     }
 
 }

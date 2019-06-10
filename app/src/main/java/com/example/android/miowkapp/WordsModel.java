@@ -65,7 +65,7 @@ public class WordsModel {
 
     public static ArrayList<WordsModel> getMyArrayListColors() {
         ArrayList<WordsModel> words = new ArrayList<WordsModel>();
-        words.add(new WordsModel("test test", "test 2 test 2"));
+        words.add(new WordsModel("test Colors", "test 2 test 2"));
         words.add(new WordsModel("test test", "test 2 test 2"));
         words.add(new WordsModel("test test", "test 2 test 2"));
         words.add(new WordsModel("test test", "test 2 test 2"));
@@ -73,5 +73,47 @@ public class WordsModel {
         return words;
     }
 
+    public static  ArrayList<WordsModel> getArrayListFamily(){
+
+        ArrayList<WordsModel> words = new ArrayList<WordsModel>();
+        words.add(new WordsModel("hello this Family fragment ", "fgfgfgfg"));
+        words.add(new WordsModel("ghghghment ", "dfdfdfdf"));
+        words.add(new WordsModel("hefgdfdfamily fragment ", "sdsdsdsd"));
+        words.add(new WordsModel("heldfdfnt ", "3343434"));
+        words.add(new WordsModel("hello this Family fragment ", "54545454"));
+        words.add(new WordsModel("helldddfdfamily fragment ", "23232323"));
+        words.add(new WordsModel("heldfdfragment ", "121212"));
+        return words;
+
+    }
+
+
+    public static ArrayList<WordsModel> getArrayListNumbers(){
+        ArrayList<WordsModel> words = new ArrayList<WordsModel>();
+        words.add(new WordsModel("Numbers", "اهلا"));
+        words.add(new WordsModel("hi", "اهلا"));
+        words.add(new WordsModel("yo", "اهلا"));
+        words.add(new WordsModel("qwqwqwqw", "اهلا"));
+        words.add(new WordsModel("wewew", "اهلا"));
+        words.add(new WordsModel("woerererrds", "اهلا"));
+        words.add(new WordsModel("rerer", "اهلا"));
+        words.add(new WordsModel("rttrt", "اهلا"));
+        words.add(new WordsModel("fgfgfgfg", "اهلا"));
+        words.add(new WordsModel("hhhhh", "اهلا"));
+        words.add(new WordsModel("ggggg", "اهلا"));
+        return words;
+    }
+
+    public static ArrayList<WordsModel> getArrayListPhrases(){
+        ArrayList<WordsModel> words = new ArrayList<WordsModel>();
+        words.add(new WordsModel("phrases text", "ةيةيةية"));
+        words.add(new WordsModel("fgfgfgfg text", "ةيةيةية"));
+        words.add(new WordsModel("dfdfdfdf text", "ةيةيةية"));
+        words.add(new WordsModel("phrases ssdsdsd", "ةيةيةية"));
+        words.add(new WordsModel("phrases text", "ةيةيةية"));
+        words.add(new WordsModel("45454545 text", "ةيةيةية"));
+        words.add(new WordsModel("454545 text", "ةيةيةية"));
+        return words;
+    }
 
 }
