@@ -41,6 +41,7 @@ public class myWordAdapter extends ArrayAdapter<WordsModel> {
 
         if (word.hasImage()) {
             imageView.setVisibility(View.VISIBLE);
+            imageView.setImageResource(word.getmImageResource());
         } else {
             imageView.setVisibility(View.GONE);
         }
