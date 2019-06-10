@@ -70,10 +70,13 @@ public class WordsModel {
         words.add(new WordsModel("test test", "test 2 test 2"));
         words.add(new WordsModel("test test", "test 2 test 2"));
         words.add(new WordsModel("test test", "test 2 test 2"));
+
+        WordsModel wordsModel = new WordsModel("hi", "yo");
+        words.add(wordsModel);
         return words;
     }
 
-    public static  ArrayList<WordsModel> getArrayListFamily(){
+    public static ArrayList<WordsModel> getArrayListFamily() {
 
         ArrayList<WordsModel> words = new ArrayList<WordsModel>();
         words.add(new WordsModel("hello this Family fragment ", "fgfgfgfg"));
@@ -88,7 +91,7 @@ public class WordsModel {
     }
 
 
-    public static ArrayList<WordsModel> getArrayListNumbers(){
+    public static ArrayList<WordsModel> getArrayListNumbers() {
         ArrayList<WordsModel> words = new ArrayList<WordsModel>();
         words.add(new WordsModel("Numbers", "اهلا"));
         words.add(new WordsModel("hi", "اهلا"));
@@ -104,7 +107,7 @@ public class WordsModel {
         return words;
     }
 
-    public static ArrayList<WordsModel> getArrayListPhrases(){
+    public static ArrayList<WordsModel> getArrayListPhrases() {
         ArrayList<WordsModel> words = new ArrayList<WordsModel>();
         words.add(new WordsModel("phrases text", "ةيةيةية"));
         words.add(new WordsModel("fgfgfgfg text", "ةيةيةية"));
@@ -115,5 +118,6 @@ public class WordsModel {
         words.add(new WordsModel("454545 text", "ةيةيةية"));
         return words;
     }
+
 
 }

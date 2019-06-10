@@ -38,9 +38,9 @@ public class Colors extends Fragment {
 
     private void populateColorsList() {
         ArrayList<WordsModel> words = WordsModel.getMyArrayListColors();
-        myWordAdapter adapterb = new myWordAdapter(this.getContext(), words);
+        myWordAdapter adapter = new myWordAdapter(this.getContext(), words);
         ListView listView = (ListView) view.findViewById(R.id.myList);
-        listView.setAdapter(adapterb);
+        listView.setAdapter(adapter);
         //listView.setOnClickListener();
     }
 

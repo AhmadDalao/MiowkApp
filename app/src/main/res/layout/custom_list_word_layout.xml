@@ -22,14 +22,16 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin_top_12dp"
             android:orientation="vertical">
+        <!--   android:layout_marginTop="@dimen/margin_top_12dp" -->
 
             <TextView
                 android:id="@+id/EnglishText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_top_8dp"
+                android:textAppearance="?android:textAppearanceLarge"
+                android:textStyle="bold"
                 android:layout_marginBottom="@dimen/margin_bot_8dp"
                 android:gravity="left"
                 android:text="@string/am_the_english_text" />
@@ -37,6 +39,7 @@
             <TextView
                 android:id="@+id/TranslationText"
                 android:layout_width="match_parent"
+                android:textAppearance="?android:textAppearanceMedium"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_top_8dp"
                 android:layout_marginBottom="@dimen/margin_bot_8dp"
