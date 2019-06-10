@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -30,11 +31,19 @@ public class myWordAdapter extends ArrayAdapter<WordsModel> {
 
 
         WordsModel word = getItem(position);
+
         TextView textEnglish = (TextView) convertView.findViewById(R.id.EnglishText);
         TextView textTranslation = (TextView) convertView.findViewById(R.id.TranslationText);
+        ImageView imageView = (ImageView) convertView.findViewById(R.id.imageView);
 
         textEnglish.setText(word.getmTextEnglish());
         textTranslation.setText(word.getmTextTranslation());
+
+        if (word.hasImage()) {
+            imageView.setVisibility(View.VISIBLE);
+        } else {
+            imageView.setVisibility(View.GONE);
+        }
 
 
         return convertView;
