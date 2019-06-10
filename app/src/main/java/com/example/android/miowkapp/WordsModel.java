@@ -111,6 +111,8 @@ public class WordsModel {
 
 
     public static ArrayList<WordsModel> getMyArrayListColors() {
+        // Create an ArrayList of WordsModel objects
+
         ArrayList<WordsModel> words = new ArrayList<WordsModel>();
         words.add(new WordsModel("test Colors", "test 2 test 2", R.drawable.ic_colors));
         words.add(new WordsModel("test test", "test 2 test 2"));
@@ -124,6 +126,7 @@ public class WordsModel {
     }
 
     public static ArrayList<WordsModel> getArrayListFamily() {
+        // Create an ArrayList of WordsModel objects
 
         ArrayList<WordsModel> words = new ArrayList<WordsModel>();
         words.add(new WordsModel("hello this Family fragment ", "fgfgfgfg", R.drawable.ic_colors));
@@ -139,6 +142,8 @@ public class WordsModel {
 
 
     public static ArrayList<WordsModel> getArrayListNumbers() {
+        // Create an ArrayList of WordsModel objects
+
         ArrayList<WordsModel> words = new ArrayList<WordsModel>();
         words.add(new WordsModel("Numbers", "اهلا", R.drawable.ic_numbers));
         words.add(new WordsModel("hi", "اهلا"));
@@ -155,6 +160,8 @@ public class WordsModel {
     }
 
     public static ArrayList<WordsModel> getArrayListPhrases() {
+        // Create an ArrayList of WordsModel objects
+
         ArrayList<WordsModel> words = new ArrayList<WordsModel>();
         words.add(new WordsModel("phrases text", "text", R.drawable.ic_colors));
         words.add(new WordsModel("fgfgfgfg text", "ةيةيةية"));
