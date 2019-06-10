@@ -7,6 +7,16 @@ public class WordsModel {
     private String mTextEnglish;
     private String mTextTranslation;
     private int mImageResource;
+    private  int mAudio ;
+
+
+
+    public WordsModel(String mTextEnglish , String mTextTranslation , int mImageResource , int mAudio){
+        this.mTextEnglish = mTextEnglish;
+        this.mTextTranslation = mTextTranslation;
+        this.mImageResource = mImageResource;
+        this.mAudio = mAudio;
+    }
 
 
     public WordsModel(String mTextEnglish , String mTextTranslation , int mImageResource){
@@ -19,6 +29,9 @@ public class WordsModel {
         this.mTextEnglish = mTextEnglish;
         this.mTextTranslation = mTextTranslation;
     }
+
+
+
 
     //retrieve the english text
 
@@ -34,6 +47,10 @@ public class WordsModel {
     //retrieve the image id
     public int getmImageResource(){
         return mImageResource;
+    }
+
+    public  int getmAudio(){
+        return mAudio;
     }
 
 
