@@ -122,8 +122,6 @@ public class WordsModel {
         words.add(new WordsModel("mustard yellow", "test 2 test 2", R.drawable.color_mustard_yellow));
         words.add(new WordsModel("red", "test 2 test 2", R.drawable.color_red));
         words.add(new WordsModel("white", "test 2 test 2", R.drawable.color_white));
-        WordsModel wordsModel = new WordsModel("hi", "yo");
-        words.add(wordsModel);
         return words;
     }
 

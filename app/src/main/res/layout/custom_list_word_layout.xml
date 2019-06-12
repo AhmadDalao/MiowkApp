@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<LinearLayout
-    android:id="@+id/my_container"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#FFF7DA"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:padding="16dp">
+    android:orientation="horizontal">
 
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="@dimen/image_width"
         android:layout_height="@dimen/image_height"
+        android:layout_margin="16dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <LinearLayout
+        android:id="@+id/my_container"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="88dp"
         android:orientation="vertical"
-        android:paddingLeft="16dp">
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp">
         <!--   android:layout_marginTop="@dimen/margin_top_12dp" -->
 
         <LinearLayout

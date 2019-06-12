@@ -117,11 +117,11 @@ public class myWordAdapter extends ArrayAdapter<WordsModel> {
 
 
         // Set the theme color for the list item
-         convertView.findViewById(R.id.my_container);
+      View textContainer =   convertView.findViewById(R.id.my_container);
         // Find the color that the resource ID maps to
         int color = ContextCompat.getColor(getContext(), mColor);
         // Set the background color of the text container View
-        convertView.setBackgroundColor(color);
+        textContainer.setBackgroundColor(color);
 
 
 //
