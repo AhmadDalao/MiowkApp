@@ -1,6 +1,7 @@
 package com.example.android.miowkapp;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -48,7 +49,7 @@ public class phrases extends Fragment {
          {@link WordsModel}s. The adapter knows how to create list item views for each item
          in the list.
          */
-        myWordAdapter adapter = new myWordAdapter(this.getContext(), words);
+        myWordAdapter adapter = new myWordAdapter(this.getContext(), words ,R.color.primary_light);
 
         // Get a reference to the ListView, and attach the adapter to the listView.
         ListView listView = (ListView) view.findViewById(R.id.myList);
