@@ -1,6 +1,7 @@
 package com.example.android.miowkapp;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TabLayout;
 import android.view.LayoutInflater;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -20,6 +22,10 @@ import java.util.ArrayList;
  * based on a data source, which is a list of {@link WordsModel} objects.
  */
 public class myWordAdapter extends ArrayAdapter<WordsModel> {
+
+    // this variable is going to be used to sit the background of each page
+    private int mColor;
+
 
     /**
      * This is our own custom constructor (it doesn't mirror a superclass constructor).
@@ -36,6 +42,27 @@ public class myWordAdapter extends ArrayAdapter<WordsModel> {
         // going to use this second argument, so it can be any value. Here, we used 0.
         super(context, 0, wordsModels);
     }
+
+
+    /**
+     * This is our own custom constructor (it doesn't mirror a superclass constructor).
+     * The context is used to inflate the layout file, and the list is the data we want
+     * to populate into the lists.
+     *
+     * @param context        The current context. Used to inflate the layout file.
+     * @param wordsModels A List of AndroidFlavor objects to display in a list
+     * @param colorResource is the background colo provided to change the background of the activity
+     */
+    public myWordAdapter(Context context, ArrayList<WordsModel> wordsModels , int colorResource) {
+        // Here, we initialize the ArrayAdapter's internal storage for the context and the list.
+        // the second argument is used when the ArrayAdapter is populating a single TextView.
+        // Because this is a custom adapter for two TextViews and an ImageView, the adapter is not
+        // going to use this second argument, so it can be any value. Here, we used 0.
+        super(context, 0, wordsModels);
+        this.mColor = colorResource;
+    }
+
+
 
     /**
      * Provides a view for an AdapterView (ListView, GridView, etc.)
@@ -82,6 +109,9 @@ public class myWordAdapter extends ArrayAdapter<WordsModel> {
         } else {
             imageView.setVisibility(View.GONE);
         }
+
+
+     //  convertView.setBackground(Drawable.createFromPath(String.valueOf(mColor)));
 
         // Return the whole list item layout (containing 2 TextViews and an ImageView)
         // so that it can be shown in the ListView

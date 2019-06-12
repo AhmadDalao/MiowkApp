@@ -14,11 +14,11 @@ import java.util.ArrayList;
 public class WordsModel {
     //declare private data instead of public to ensure the privacy of data field of each class
 
-    /**
+    /*
      * Default text in this case the English language  for each word
      */
     private String mTextEnglish;
-    /**
+    /*
      * translation text in this case the translation  for each  English word
      */
     private String mTextTranslation;
@@ -114,12 +114,14 @@ public class WordsModel {
         // Create an ArrayList of WordsModel objects
 
         ArrayList<WordsModel> words = new ArrayList<WordsModel>();
-        words.add(new WordsModel("test Colors", "test 2 test 2", R.drawable.ic_colors));
-        words.add(new WordsModel("test test", "test 2 test 2"));
-        words.add(new WordsModel("test test", "test 2 test 2", R.drawable.ic_colors));
-        words.add(new WordsModel("test test", "test 2 test 2"));
-        words.add(new WordsModel("test test", "test 2 test 2", R.drawable.ic_colors));
-
+        words.add(new WordsModel("black", "test 2 test 2", R.drawable.color_black));
+        words.add(new WordsModel("brown", "test 2 test 2" , R.drawable.color_brown));
+        words.add(new WordsModel("dusty yellow", "test 2 test 2", R.drawable.color_dusty_yellow));
+        words.add(new WordsModel("gray", "test 2 test 2" , R.drawable.color_gray));
+        words.add(new WordsModel("green", "test 2 test 2", R.drawable.color_green));
+        words.add(new WordsModel("mustard yellow", "test 2 test 2", R.drawable.color_mustard_yellow));
+        words.add(new WordsModel("red", "test 2 test 2", R.drawable.color_red));
+        words.add(new WordsModel("white", "test 2 test 2", R.drawable.color_white));
         WordsModel wordsModel = new WordsModel("hi", "yo");
         words.add(wordsModel);
         return words;
