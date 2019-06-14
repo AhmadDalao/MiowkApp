@@ -51,14 +51,17 @@ public class WordsModel {
      * @param mTextEnglish     the word  that the user is already familiar with
      *                         ( such as English or any other languages ).
      * @param mTextTranslation the word translation in arabic for example.
-     * @param mImageResource   the image which will be added next to each item in the list to help
-     *                         understanding the meaning of the word.
+     * @param mAudio  the audio for each word is added this constructor is most likely to be used
+     *                in phrase fragment
      */
-    public WordsModel(String mTextEnglish, String mTextTranslation, int mImageResource) {
+    public WordsModel(String mTextEnglish, String mTextTranslation, int mAudio) {
         this.mTextEnglish = mTextEnglish;
         this.mTextTranslation = mTextTranslation;
-        this.mImageResource = mImageResource;
+        this.mAudio = mAudio;
     }
+
+
+
 
     /**
      * create a new WordModel  object
@@ -108,7 +111,6 @@ public class WordsModel {
     public int getmAudio() {
         return mAudio;
     }
-
 
 
     /*
@@ -177,13 +179,13 @@ public class WordsModel {
         // Create an ArrayList of WordsModel objects
 
         ArrayList<WordsModel> words = new ArrayList<WordsModel>();
-        words.add(new WordsModel("phrases text", "text", R.drawable.ic_colors));
-        words.add(new WordsModel("fgfgfgfg text", "ةيةيةية"));
-        words.add(new WordsModel("dfdfdfdf text", "ةيةيةية"));
-        words.add(new WordsModel("phrases ssdsdsd", "ةيةيةية"));
-        words.add(new WordsModel("phrases text", "ةيةيةية"));
-        words.add(new WordsModel("45454545 text", "ةيةيةية"));
-        words.add(new WordsModel("454545 text", "text", R.drawable.ic_pen));
+        words.add(new WordsModel("phrase are you coming", "text", R.raw.phrase_are_you_coming));
+        words.add(new WordsModel("phrase_come_here", "ةيةيةية", R.raw.phrase_come_here));
+        words.add(new WordsModel("phrase how are you feeling ", "ةيةيةية", R.raw.phrase_how_are_you_feeling));
+        words.add(new WordsModel("im coming", "ةيةيةية", R.raw.phrase_im_coming));
+        words.add(new WordsModel("im feeling good", "ةيةيةية", R.raw.phrase_im_feeling_good));
+        words.add(new WordsModel("what is your name", "ةيةيةية", R.raw.phrase_what_is_your_name));
+        words.add(new WordsModel("my name is ", "text", R.raw.phrase_my_name_is));
         return words;
     }
 

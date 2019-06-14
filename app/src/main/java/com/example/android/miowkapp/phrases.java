@@ -58,6 +58,14 @@ public class phrases extends Fragment {
         // Get a reference to the ListView, and attach the adapter to the listView.
         ListView listView = (ListView) view.findViewById(R.id.myList);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                WordsModel wordsModel = words.get(position);
+                mediaPlayer = (MediaPlayer) MediaPlayer.create(view.getContext(), wordsModel.getmAudio());
+                mediaPlayer.start();
+            }
+        });
 
 
     }
