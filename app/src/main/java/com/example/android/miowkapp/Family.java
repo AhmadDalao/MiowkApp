@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class Family extends Fragment {
 
 
-    MediaPlayer mediaPlayer;
+   private MediaPlayer mediaPlayer;
 
     private View view;
 

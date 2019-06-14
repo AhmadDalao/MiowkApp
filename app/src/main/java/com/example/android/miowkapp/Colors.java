@@ -19,7 +19,7 @@ import java.util.List;
  */
 public class Colors extends Fragment {
 
-    MediaPlayer mediaPlayer;
+    private  MediaPlayer mediaPlayer;
 
     private View view;
 
