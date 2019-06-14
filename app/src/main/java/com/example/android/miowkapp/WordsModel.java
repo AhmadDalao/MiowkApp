@@ -81,7 +81,7 @@ public class WordsModel {
 
 
     /*
-    retrieve the english text
+    retrieve and return the english text
      */
 
     public String getmTextEnglish() {
@@ -89,27 +89,31 @@ public class WordsModel {
     }
 
     /*
-    retrieve the translation
+    retrieve  and return the translation
      */
     public String getmTextTranslation() {
         return mTextTranslation;
     }
 
     /*
-     *     retrieve the image id
+     *     retrieve and return the image id
      */
     public int getmImageResource() {
         return mImageResource;
     }
 
     /*
-     * retrieve the audio for each word
+     * retrieve and return the audio for each word
      */
     public int getmAudio() {
         return mAudio;
     }
 
 
+
+    /*
+    this method contains the array list for the colors fragment
+     */
     public static ArrayList<WordsModel> getMyArrayListColors() {
         // Create an ArrayList of WordsModel objects
 
@@ -125,6 +129,10 @@ public class WordsModel {
         return words;
     }
 
+
+    /*
+    this method contains the array list for the family fragment
+     */
     public static ArrayList<WordsModel> getArrayListFamily() {
         // Create an ArrayList of WordsModel objects
 
@@ -140,7 +148,9 @@ public class WordsModel {
 
     }
 
-
+    /*
+        this method contains the array list for the numbers fragment
+         */
     public static ArrayList<WordsModel> getArrayListNumbers() {
         // Create an ArrayList of WordsModel objects
 
@@ -157,6 +167,11 @@ public class WordsModel {
         words.add(new WordsModel("ten", "ssd", R.drawable.number_ten, R.raw.number_ten));
         return words;
     }
+
+
+    /*
+    this method contains the array list for the phrase fragment
+     */
 
     public static ArrayList<WordsModel> getArrayListPhrases() {
         // Create an ArrayList of WordsModel objects
