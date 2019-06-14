@@ -56,13 +56,29 @@ public class phrases extends Fragment {
         myWordAdapter adapter = new myWordAdapter(this.getContext(), words, R.color.primary_light);
 
         // Get a reference to the ListView, and attach the adapter to the listView.
+        // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
+        // There should be a {@link ListView} with the view ID called list, which is declared in the
+        // word_list.xml layout file.
+
         ListView listView = (ListView) view.findViewById(R.id.myList);
+
+        // Make the {@link ListView} use the {@link myWordAdapter} we created above, so that the
+        // {@link ListView} will display list items for each {@link Word} in the list.
         listView.setAdapter(adapter);
+
+        // Set a click listener to play the audio when the list item is clicked on
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                // Get the {@link WordsModel} object at the given position the user clicked on
                 WordsModel wordsModel = words.get(position);
+
+                // Create and setup the {@link MediaPlayer} for the audio resource associated
+                // with the current word
                 mediaPlayer = (MediaPlayer) MediaPlayer.create(view.getContext(), wordsModel.getmAudio());
+
+                // Start the audio file
                 mediaPlayer.start();
             }
         });
