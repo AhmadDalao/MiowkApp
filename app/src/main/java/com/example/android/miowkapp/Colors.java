@@ -1,6 +1,7 @@
 package com.example.android.miowkapp;
 
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -17,6 +18,8 @@ import java.util.List;
  */
 public class Colors extends Fragment {
 
+
+  //  MediaPlayer mediaPlayer = MediaPlayer.
 
     private View view;
 
@@ -53,7 +56,20 @@ public class Colors extends Fragment {
         // Get a reference to the ListView, and attach the adapter to the listView.
         ListView listView = (ListView) view.findViewById(R.id.myList);
         listView.setAdapter(adapter);
-    }
+        listView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+
+
+
+            }
+        });
+
+
+    }// end of populateColorsList
+
+
 
 
 }
