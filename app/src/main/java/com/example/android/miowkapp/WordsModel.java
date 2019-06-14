@@ -129,13 +129,13 @@ public class WordsModel {
         // Create an ArrayList of WordsModel objects
 
         ArrayList<WordsModel> words = new ArrayList<WordsModel>();
-        words.add(new WordsModel("hello this Family fragment ", "fgfgfgfg", R.drawable.ic_colors));
-        words.add(new WordsModel("ghghghment ", "dfdfdfdf"));
-        words.add(new WordsModel("hefgdfdfamily fragment ", "sdsdsdsd"));
-        words.add(new WordsModel("heldfdfnt ", "3343434"));
-        words.add(new WordsModel("hello this Family fragment ", "54545454", R.drawable.ic_house));
-        words.add(new WordsModel("helldddfdfamily fragment ", "23232323"));
-        words.add(new WordsModel("heldfdfragment ", "121212"));
+        words.add(new WordsModel("father ", "fgfgfgfg", R.drawable.family_father , R.raw.family_father));
+        words.add(new WordsModel("mother ", "dfdfdfdf" , R.drawable.family_mother ,R.raw.family_mother));
+        words.add(new WordsModel("older sister ", "sdsdsdsd" ,R.drawable.family_older_sister ,R.raw.family_older_sister));
+        words.add(new WordsModel("older brother ", "3343434",R.drawable.family_older_brother, R.raw.family_older_brother));
+        words.add(new WordsModel("grandfather ", "54545454", R.drawable.family_grandfather , R.raw.family_grandfather));
+        words.add(new WordsModel("grandmother ", "23232323",R.drawable.family_grandmother, R.raw.family_grandmother));
+        words.add(new WordsModel("son ", "121212" ,R.drawable.family_son ,R.raw.family_son));
         return words;
 
     }
