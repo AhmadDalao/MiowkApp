@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -18,8 +19,7 @@ import java.util.List;
  */
 public class Colors extends Fragment {
 
-
-  //  MediaPlayer mediaPlayer = MediaPlayer.
+    MediaPlayer mediaPlayer;
 
     private View view;
 
@@ -44,32 +44,30 @@ public class Colors extends Fragment {
          *  Create an ArrayList of WordsModel objects assigning the value by using the method getArrayListPhrases
          which contains the array of words defined at {@link WordsModel}
          */
-        ArrayList<WordsModel> words = WordsModel.getMyArrayListColors();
+        final ArrayList<WordsModel> words = WordsModel.getMyArrayListColors();
 
         /** Create an {@link myWordAdapter}, whose data source is a list of
          *
          {@link WordsModel}s. The adapter knows how to create list item views for each item
          in the list.
          */
-        myWordAdapter adapter = new myWordAdapter(this.getContext(), words , R.color.primary_light);
+        myWordAdapter adapter = new myWordAdapter(this.getContext(), words, R.color.primary_light);
 
         // Get a reference to the ListView, and attach the adapter to the listView.
         ListView listView = (ListView) view.findViewById(R.id.myList);
         listView.setAdapter(adapter);
-        listView.setOnClickListener(new View.OnClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                WordsModel wordsModel = words.get(position);
 
-
-
-
+                mediaPlayer = (MediaPlayer) MediaPlayer.create(view.getContext(), wordsModel.getmAudio());
+                mediaPlayer.start();
             }
         });
 
 
     }// end of populateColorsList
-
-
 
 
 }

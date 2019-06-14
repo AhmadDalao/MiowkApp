@@ -114,14 +114,14 @@ public class WordsModel {
         // Create an ArrayList of WordsModel objects
 
         ArrayList<WordsModel> words = new ArrayList<WordsModel>();
-        words.add(new WordsModel("black", "test 2 test 2", R.drawable.color_black));
-        words.add(new WordsModel("brown", "test 2 test 2" , R.drawable.color_brown));
-        words.add(new WordsModel("dusty yellow", "test 2 test 2", R.drawable.color_dusty_yellow));
-        words.add(new WordsModel("gray", "test 2 test 2" , R.drawable.color_gray));
-        words.add(new WordsModel("green", "test 2 test 2", R.drawable.color_green));
-        words.add(new WordsModel("mustard yellow", "test 2 test 2", R.drawable.color_mustard_yellow));
-        words.add(new WordsModel("red", "test 2 test 2", R.drawable.color_red));
-        words.add(new WordsModel("white", "test 2 test 2", R.drawable.color_white));
+        words.add(new WordsModel("black", "test 2 test 2", R.drawable.color_black, R.raw.color_black));
+        words.add(new WordsModel("brown", "test 2 test 2" , R.drawable.color_brown , R.raw.color_brown));
+        words.add(new WordsModel("dusty yellow", "test 2 test 2", R.drawable.color_dusty_yellow , R.raw.color_dusty_yellow));
+        words.add(new WordsModel("gray", "test 2 test 2" , R.drawable.color_gray , R.raw.color_gray));
+        words.add(new WordsModel("green", "test 2 test 2", R.drawable.color_green , R.raw.color_green));
+        words.add(new WordsModel("mustard yellow", "test 2 test 2", R.drawable.color_mustard_yellow ,R.raw.color_mustard_yellow));
+        words.add(new WordsModel("red", "test 2 test 2", R.drawable.color_red , R.raw.color_red));
+        words.add(new WordsModel("white", "test 2 test 2", R.drawable.color_white ,R.raw.color_white));
         return words;
     }
 
