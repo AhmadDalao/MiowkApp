@@ -180,4 +180,7 @@ public class Colors extends Fragment {
             mAudioManager.abandonAudioFocus(mOnAudioFocusChangeListener);
         }
     }
+
+
+
 }
