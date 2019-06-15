@@ -19,6 +19,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Log.d("lifecycle","onCreate invoked");
+
         // Find the view pager that will allow the user to swipe between fragments
         // you can fine id.viewpager in activity main.xml under viewPager View
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);

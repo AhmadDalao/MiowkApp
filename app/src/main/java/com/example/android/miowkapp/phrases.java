@@ -22,10 +22,23 @@ import java.util.List;
  */
 public class phrases extends Fragment {
 
-    /**
-     * Handles playback of all the sound files
-     */
+    /*
+   handle playback of all the sound files
+    */
     private MediaPlayer mediaPlayer;
+
+
+    /**
+     * this listener is triggered when the {@link MediaPlayer} has completed
+     * playing the file.
+     */
+
+    private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mp) {
+            releaseMediaPlayer();
+        }
+    };
 
     private View view;
 
@@ -83,6 +96,10 @@ public class phrases extends Fragment {
                 /**you may want to print the current state of an object to the logs ( */
                 //  Log.v("phrase", "current word" + wordsModel.toString());
 
+                /*
+                release the media player if it currently exists because we are about to play
+                a different sound file
+                 */
                 releaseMediaPlayer();
 
                 // Create and setup the {@link MediaPlayer} for the audio resource associated
@@ -90,13 +107,9 @@ public class phrases extends Fragment {
                 mediaPlayer = (MediaPlayer) MediaPlayer.create(view.getContext(), wordsModel.getmAudio());
                 // Start the audio file
                 mediaPlayer.start();
-                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                    @Override
-                    public void onCompletion(MediaPlayer mp) {
-                        releaseMediaPlayer();
-                        Toast.makeText(view.getContext(), "i'm done", Toast.LENGTH_LONG).show();
-                    }
-                });
+                // setup  a listener on media player , so that we can stop and release the
+                //media player once sound has finished
+                mediaPlayer.setOnCompletionListener(mCompletionListener);
             }
         });
 
@@ -121,5 +134,14 @@ public class phrases extends Fragment {
         }
 
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        // When the activity is stopped, release the media player resources because we won't
+        // be playing any more sounds.
+        releaseMediaPlayer();
+    }
+
 
 }
