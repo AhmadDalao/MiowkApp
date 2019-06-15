@@ -18,12 +18,25 @@ public class WordsModel {
      * Default text in this case the English language  for each word
      */
     private String mTextEnglish;
-    /*
-     * translation text in this case the translation  for each  English word
+
+    /**
+     * Miwok translation for the word
      */
     private String mTextTranslation;
+
+    /**
+     * Constant value that represents no image was provided for this word
+     */
     private final static int Image = -1;
+
+    /**
+     * Image resource ID for the word
+     */
     private int mImageResource = Image;
+
+    /**
+     * Audio resource ID for the word
+     */
     private int mAudio;
 
 
@@ -51,16 +64,14 @@ public class WordsModel {
      * @param mTextEnglish     the word  that the user is already familiar with
      *                         ( such as English or any other languages ).
      * @param mTextTranslation the word translation in arabic for example.
-     * @param mAudio  the audio for each word is added this constructor is most likely to be used
-     *                in phrase fragment
+     * @param mAudio           the audio for each word is added this constructor is most likely to be used
+     *                         in phrase fragment
      */
     public WordsModel(String mTextEnglish, String mTextTranslation, int mAudio) {
         this.mTextEnglish = mTextEnglish;
         this.mTextTranslation = mTextTranslation;
         this.mAudio = mAudio;
     }
-
-
 
 
     /**
@@ -190,4 +201,13 @@ public class WordsModel {
     }
 
 
+    @Override
+    public String toString() {
+        return "WordsModel{" +
+                "mTextEnglish='" + mTextEnglish + '\'' +
+                ", mTextTranslation='" + mTextTranslation + '\'' +
+                ", mImageResource=" + mImageResource +
+                ", mAudio=" + mAudio +
+                '}';
+    }
 }

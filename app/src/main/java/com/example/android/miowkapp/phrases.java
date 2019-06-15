@@ -5,11 +5,13 @@ import android.graphics.Color;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,8 +22,11 @@ import java.util.List;
  */
 public class phrases extends Fragment {
 
-
+    /**
+     * Handles playback of all the sound files
+     */
     private MediaPlayer mediaPlayer;
+
     private View view;
 
     public phrases() {
@@ -69,22 +74,52 @@ public class phrases extends Fragment {
         // Set a click listener to play the audio when the list item is clicked on
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(AdapterView<?> parent, final View view, int position, long id) {
 
                 // Get the {@link WordsModel} object at the given position the user clicked on
                 WordsModel wordsModel = words.get(position);
 
+
+                /**you may want to print the current state of an object to the logs ( */
+                //  Log.v("phrase", "current word" + wordsModel.toString());
+
+                releaseMediaPlayer();
+
                 // Create and setup the {@link MediaPlayer} for the audio resource associated
                 // with the current word
                 mediaPlayer = (MediaPlayer) MediaPlayer.create(view.getContext(), wordsModel.getmAudio());
-
                 // Start the audio file
                 mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                    @Override
+                    public void onCompletion(MediaPlayer mp) {
+                        releaseMediaPlayer();
+                        Toast.makeText(view.getContext(), "i'm done", Toast.LENGTH_LONG).show();
+                    }
+                });
             }
         });
 
 
     }
 
+
+    /**
+     * Clean up the media player by releasing its resources.
+     */
+    private void releaseMediaPlayer() {
+        // If the media player is not null, then it may be currently playing a sound.
+        if (mediaPlayer != null) {
+            // Regardless of the current state of the media player, release its resources
+            // because we no longer need it.
+            mediaPlayer.release();
+
+            // Set the media player back to null. For our code, we've decided that
+            // setting the media player to null is an easy way to tell that the media player
+            // is not configured to play an audio file at the moment.
+            mediaPlayer = null;
+        }
+
+    }
 
 }
