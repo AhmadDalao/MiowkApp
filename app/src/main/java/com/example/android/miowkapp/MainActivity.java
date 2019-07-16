@@ -1,16 +1,10 @@
 package com.example.android.miowkapp;
 
+import android.os.Bundle;
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,20 +13,33 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Log.d("lifecycle","onCreate invoked");
+        Log.d("lifecycle", "onCreate invoked");
 
         // Find the view pager that will allow the user to swipe between fragments
         // you can fine id.viewpager in activity main.xml under viewPager View
         ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
         if (viewPager != null) {
             setupViewPager(viewPager);
+
+
+            /*
+            This page transformer uses the default slide animation for sliding pages to the left,
+             while using a "depth" animation for sliding pages to the right. This depth animation fades
+             the page out, and scales it down linearly.
+             */
+            viewPager.setPageTransformer(true, new DepthPageTransformer());
+
+            //This page transformer shrinks and fades pages when scrolling between adjacent pages
+            viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
         }
+
+
         //  add the icon to the tap layout
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
         //this code will change the color of the text on the tab layout both code below will work  just fine ..
         //  tabLayout.setTabTextColors(Color.parseColor("#D3D3D3"),Color.parseColor("#f32159"));
-      //  tabLayout.setTabTextColors(getResources().getColor(R.color.myBlack), getResources().getColor(R.color.colorAccent));
+        //  tabLayout.setTabTextColors(getResources().getColor(R.color.myBlack), getResources().getColor(R.color.colorAccent));
         //  tabLayout.setTabIconTint(  );
 
 //        // to add icons to the taps
@@ -56,36 +63,40 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     @Override
     protected void onStart() {
         super.onStart();
-        Log.d("lifecycle","onStart invoked");
+        Log.d("lifecycle", "onStart invoked");
     }
+
     @Override
     protected void onResume() {
         super.onResume();
-        Log.d("lifecycle","onResume invoked");
+        Log.d("lifecycle", "onResume invoked");
     }
+
     @Override
     protected void onPause() {
         super.onPause();
-        Log.d("lifecycle","onPause invoked");
+        Log.d("lifecycle", "onPause invoked");
     }
+
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d("lifecycle","onStop invoked");
+        Log.d("lifecycle", "onStop invoked");
     }
+
     @Override
     protected void onRestart() {
         super.onRestart();
-        Log.d("lifecycle","onRestart invoked");
+        Log.d("lifecycle", "onRestart invoked");
     }
+
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d("lifecycle","onDestroy invoked");
+        Log.d("lifecycle", "onDestroy invoked");
     }
 
 
