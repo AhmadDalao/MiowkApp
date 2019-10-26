@@ -1,20 +1,14 @@
 package com.example.android.miowkapp;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.drawable.Drawable;
 import android.support.annotation.NonNull;
-import android.support.design.widget.TabLayout;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -112,12 +106,14 @@ public class myWordAdapter extends ArrayAdapter<WordsModel> {
         }
 
 
-        // Set the theme color for the list item
-      View textContainer =   convertView.findViewById(R.id.my_container);
-        // Find the color that the resource ID maps to
-        int color = ContextCompat.getColor(getContext(), mColor);
-        // Set the background color of the text container View
-        textContainer.setBackgroundColor(color);
+        if (mColor != 0) {
+            // Set the theme color for the list item
+            View textContainer = convertView.findViewById(R.id.my_container);
+            // Find the color that the resource ID maps to
+            int color = ContextCompat.getColor(getContext(), mColor);
+            // Set the background color of the text container View
+            textContainer.setBackgroundColor(color);
+        }
 
 
 //

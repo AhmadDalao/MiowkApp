@@ -109,7 +109,7 @@ public class Family extends Fragment {
          {@link WordsModel}s. The adapter knows how to create list item views for each item
          in the list.
          */
-        myWordAdapter adapter = new myWordAdapter(this.getContext(), words, R.color.primary_dark);
+        myWordAdapter adapter = new myWordAdapter(this.getContext(), words);
         // Get a reference to the ListView, and attach the adapter to the listView.
         // Find the {@link ListView} object in the view hierarchy of the {@link Activity}.
         // There should be a {@link ListView} with the view ID called list, which is declared in the
