@@ -6,18 +6,15 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 
 /**
@@ -131,37 +128,30 @@ public class Numbers extends Fragment {
                 // Get the {@link WordsModel} object at the given position the user clicked on
                 WordsModel wordsModel = words.get(position);
 
-
+                // checking if there is an audio in the list , if not show toast and return
+                int audioToPlay = wordsModel.getmAudio();
+                if (audioToPlay == 0) {
+                    Toast.makeText(getContext(), "there is no audio", Toast.LENGTH_LONG).show();
+                    Log.v("AudioNotFound", "there is no audio" + audioToPlay);
+                    return;
+                }
                 /**you may want to print the current state of an object to the logs ( */
                 //  Log.v("phrase", "current word" + wordsModel.toString());
 
-                /*
+                    /*
                 release the media player if it currently exists because we are about to play
                 a different sound file
                  */
                 releaseMediaPlayer();
 
-
-                // Request audio focus so in order to play the audio file. The app needs to play a
-                // short audio file, so we will request audio focus with a short amount of time
-                // with AUDIOFOCUS_GAIN_TRANSIENT.
-                int result = mAudioManager.requestAudioFocus(mOnAudioFocusChangeListener,
-                        AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
-
-                if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                    // We have audio focus now.
-
-                    // Create and setup the {@link MediaPlayer} for the audio resource associated
-                    // with the current word
-                    mediaPlayer = (MediaPlayer) MediaPlayer.create(view.getContext(), wordsModel.getmAudio());
-                    // Start the audio file
-                    mediaPlayer.start();
-                    // setup  a listener on media player , so that we can stop and release the
-                    //media player once sound has finished
-                    mediaPlayer.setOnCompletionListener(mCompletionListener);
-                }// end of if
-
-
+                // Create and setup the {@link MediaPlayer} for the audio resource associated
+                // with the current word
+                mediaPlayer = (MediaPlayer) MediaPlayer.create(view.getContext(), audioToPlay);
+                // Start the audio file
+                mediaPlayer.start();
+                // setup  a listener on media player , so that we can stop and release the
+                //media player once sound has finished
+                mediaPlayer.setOnCompletionListener(mCompletionListener);
             }
         });
 

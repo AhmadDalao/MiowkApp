@@ -2,7 +2,6 @@ package com.example.android.miowkapp;
 
 
 import android.content.Context;
-import android.graphics.Color;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -16,8 +15,6 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 
 /**
@@ -74,7 +71,6 @@ public class phrases extends Fragment {
             }
         }
     };
-
 
 
     private View view;
@@ -134,7 +130,13 @@ public class phrases extends Fragment {
                 // Get the {@link WordsModel} object at the given position the user clicked on
                 WordsModel wordsModel = words.get(position);
 
-
+                // checking if there is an audio in the list , if not show toast and return
+                int audioToPlay = wordsModel.getmAudio();
+                if (audioToPlay == 0) {
+                    Toast.makeText(getContext(), "there is no audio", Toast.LENGTH_LONG).show();
+                    Log.v("AudioNotFound", "there is no audio" + audioToPlay);
+                    return;
+                }
                 /**you may want to print the current state of an object to the logs ( */
                 //  Log.v("phrase", "current word" + wordsModel.toString());
 
@@ -156,7 +158,7 @@ public class phrases extends Fragment {
 
                     // Create and setup the {@link MediaPlayer} for the audio resource associated
                     // with the current word
-                    mediaPlayer = (MediaPlayer) MediaPlayer.create(view.getContext(), wordsModel.getmAudio());
+                    mediaPlayer = (MediaPlayer) MediaPlayer.create(view.getContext(), audioToPlay);
                     // Start the audio file
                     mediaPlayer.start();
                     // setup  a listener on media player , so that we can stop and release the

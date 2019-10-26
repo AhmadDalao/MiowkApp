@@ -1,9 +1,5 @@
 package com.example.android.miowkapp;
 
-import android.media.Image;
-import android.provider.ContactsContract;
-import android.widget.ListView;
-
 import java.util.ArrayList;
 
 
@@ -138,7 +134,7 @@ public class WordsModel {
         words.add(new WordsModel("green", "test 2 test 2", R.drawable.color_green, R.raw.color_green));
         words.add(new WordsModel("mustard yellow", "test 2 test 2", R.drawable.color_mustard_yellow, R.raw.color_mustard_yellow));
         words.add(new WordsModel("red", "test 2 test 2", R.drawable.color_red, R.raw.color_red));
-        words.add(new WordsModel("white", "test 2 test 2", R.drawable.color_white, R.raw.color_white));
+        words.add(new WordsModel("white", "test 2 test 2"));
         return words;
     }
 
