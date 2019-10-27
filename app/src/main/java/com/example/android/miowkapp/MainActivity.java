@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
             viewPager.setPageTransformer(true, new DepthPageTransformer());
 
             //This page transformer shrinks and fades pages when scrolling between adjacent pages
-            viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
+          //  viewPager.setPageTransformer(true, new ZoomOutPageTransformer());
         }
 
 
