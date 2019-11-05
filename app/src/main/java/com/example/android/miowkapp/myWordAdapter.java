@@ -106,6 +106,8 @@ public class myWordAdapter extends ArrayAdapter<WordsModel> {
         }
 
 
+        // in case there was no color provided solved. crush issue.
+        // meaning you can use their  the 3 argument constructor or the the 2 argument constructor.
         if (mColor != 0) {
             // Set the theme color for the list item
             View textContainer = convertView.findViewById(R.id.my_container);
