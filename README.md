@@ -1,6 +1,7 @@
 # MiowkApp
 
 This app displays lists of vocabulary words for the user to learn the Miwok language. 
+the project uses fragments and viewPager .
 
 # Pre-requisites
 - Android SDK v28
